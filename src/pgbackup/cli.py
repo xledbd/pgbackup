@@ -1,9 +1,7 @@
-from argparse import ArgumentParser, Action, Namespace
-from collections.abc import Sequence
-from typing import Any
+from argparse import ArgumentParser, Action
 
 class DriverAction(Action):
-    def __call__(self, parser: ArgumentParser, namespace: Namespace, values: str | Sequence[Any] | None, option_string: str | None = ...) -> None:
+    def __call__(self, parser, namespace, values, option_string) -> None:
         driver, destination = values
         namespace.driver = driver.lower()
         namespace.destination = destination
